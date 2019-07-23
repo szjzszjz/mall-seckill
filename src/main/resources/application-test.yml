@@ -1,0 +1,6 @@
+spring:
+  profiles: test
+    include:
+  -devtools
+
+debug: true

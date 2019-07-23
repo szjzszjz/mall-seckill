@@ -1,0 +1,6 @@
+只少要有一个默认的资源文件, 否则不加载国际化相关配置(MessageSourceAutoConfiguration)
+
+什么是默认的资源文件 ?
+比如定义了 spring.messages.basename: i18n/common, i18n/login, 
+那么只少要存在 login.properties 或者 common.properties 文件.
+
