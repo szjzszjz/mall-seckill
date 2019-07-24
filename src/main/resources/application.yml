@@ -1,6 +1,6 @@
 spring:
-  profiles:
-    active: dev
+#  profiles:
+#    active: dev
 
 
   datasource:
@@ -29,16 +29,8 @@ spring:
       connection-properties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500
 
 
-  redis:
-    host: 192.168.74.128
-    port: 6379
-    password: 123
-    timeout: 3
-    jedis:
-      pool:
-        max-active: 10
-        max-idle: 10
-        max-wait: 3
+
+
 
   #以下配置可以在具体的 spring.profiles 进行覆盖
 # INTERNATIONALIZATION (MessageSourceAutoConfiguration)
@@ -58,3 +50,17 @@ mybatis:
     default-fetch-size: 100
     default-statement-timeout: 3000
   mapper-locations: classpath:com/szjz/mallseckill/repository*.xml
+
+redis:
+  host: 192.168.74.128
+  port: 6379
+#  password: 123
+  timeout: 3
+  poolMaxActive: 10
+  poolMaxIdle: 10
+  poolMaxWait: 3
+
+
+swagger:
+  groupName: mall-seckill
+  basePackage: com.szjz.mallseckill.controller

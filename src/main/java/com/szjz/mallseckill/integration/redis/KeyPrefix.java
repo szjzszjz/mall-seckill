@@ -5,7 +5,8 @@ package com.szjz.mallseckill.integration.redis;
  * date:2019/7/23
  */
 public interface KeyPrefix {
-    int expireSeconds();
+
+    int getExpireSeconds();
 
     String getPrefix();
 }

@@ -31,7 +31,7 @@ public abstract class BasePrefix implements KeyPrefix {
 
     /** default 0 express never expires */
     @Override
-    public int expireSeconds() {
+    public int getExpireSeconds() {
         return expireSeconds;
     }
 

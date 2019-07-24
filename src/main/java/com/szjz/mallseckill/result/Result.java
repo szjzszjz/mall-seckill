@@ -1,13 +1,19 @@
 package com.szjz.mallseckill.result;
 
+import lombok.Data;
 import org.springframework.data.domain.Page;
+
+import java.io.Serializable;
 
 /**
  * author:szjz
  * date:2019/7/23
  */
-public class Result {
+@Data
+public class Result implements Serializable {
 
+
+    private static final long serialVersionUID = 715229965091701393L;
     /**
      * code
      */
@@ -17,6 +23,11 @@ public class Result {
      * msg
      */
     private String msg;
+
+    /**
+     * debug模式下, 同时返回错误堆栈
+     */
+    private String exMsg;
 
     /**
      * data
@@ -74,6 +85,13 @@ public class Result {
      */
     public static Result fail(Object data) {
         return new Result(ResultEnum.FAIL.getCode(), ResultEnum.FAIL.getMsg(), data);
+    }
+
+    /**
+     * 系统错误
+     */
+    public static Result error(String errorMsg) {
+        return new Result(ResultEnum.SYSTEM_ERROR.getCode(), errorMsg);
     }
     /**
      * 系统错误
