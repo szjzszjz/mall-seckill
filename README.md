@@ -47,3 +47,11 @@ RabbitMQ队列缓存，异步下单，增强用户体验
 秒杀接口地址隐藏  
 数学公式验证码  
 接口防刷  
+
+### *有关Redis的内容  
+在CentOS7下安装Redis，安装完成之后，远程连接时会爆出如下异常:  
+```text
+Failed connecting to host 192.168.xx.xxx:6379 
+```  
+`解决办法：`[Failed connecting to host](http://note.youdao.com/noteshare?id=e227923eecab339849433cdd85bed0ab&sub=71D9867DA224496E98C7ED45AB5C7CEA) (附：[CentOS 7 对外开放Redis的端口](http://note.youdao.com/noteshare?id=325a578ad7a25d9b0f4253b1adbc4e00&sub=107E607FBAD3496C94388353DFDD9F31))
+
