@@ -6,7 +6,7 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>2.1.6.RELEASE</version>
-        <relativePath/> <!-- lookup parent from repository -->
+        <relativePath/> <!-- lookup parent from dao -->
     </parent>
     <groupId>com.szjz</groupId>
     <artifactId>mall-seckill</artifactId>
@@ -16,21 +16,25 @@
 
     <properties>
         <java.version>1.8</java.version>
+
+        <springfox-swagger2.version>2.9.2</springfox-swagger2.version>
+        <!-- 2.8.x/2.9.x ui都太难用了 -->
+        <springfox-swagger-ui.version>2.7.0</springfox-swagger-ui.version>
     </properties>
 
     <dependencies>
 
         <!--        swagger 只用ui用2.7.0 swagger2用2.9.2-->
-        <!-- swagger2 -->
-        <dependency>
-            <groupId>io.springfox</groupId>
-            <artifactId>springfox-swagger-ui</artifactId>
-            <version>2.7.0</version>
-        </dependency>
+        <!-- swagger2 必须放在swagger-ui前面 不然项目启动会报错-->
         <dependency>
             <groupId>io.springfox</groupId>
             <artifactId>springfox-swagger2</artifactId>
             <version>2.9.2</version>
+        </dependency>
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger-ui</artifactId>
+            <version>2.7.0</version>
         </dependency>
 
         <!--        shiro-->
@@ -50,6 +54,7 @@
             <version>1.4.0</version>
         </dependency>
 
+        <!--        apache.commons-->
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
@@ -58,6 +63,12 @@
             <groupId>commons-codec</groupId>
             <artifactId>commons-codec</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-text</artifactId>
+            <version>1.6</version>
+        </dependency>
+
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -129,6 +140,19 @@
             <groupId>log4j</groupId>
             <artifactId>log4j</artifactId>
             <version>1.2.17</version>
+        </dependency>
+
+        <!--        mybatis
+               引入 MyBatis-Plus 之后请不要再次引入 MyBatis 以及 MyBatis-Spring，以避免因版本差异导致的问题。-->
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-boot-starter</artifactId>
+            <version>3.1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-core</artifactId>
+            <version>3.1.0</version>
         </dependency>
 
     </dependencies>

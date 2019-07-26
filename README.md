@@ -15,7 +15,7 @@ java 高并发商城秒杀
 * #### 第一章：项目框架搭建  
 springboot环境搭建  
 集成thymeleaf,Result结果封装  
-集成mybatis+druid  
+集成mybatis+druid  `(项目中已利用Mybatis-Plus替换Mybatis 实现快速便捷开发)`  
 集成Jedis + Redis安装 + 通用缓存key封装  
 * #### 第二章：实现登录功能  
 数据库设计  
@@ -48,10 +48,15 @@ RabbitMQ队列缓存，异步下单，增强用户体验
 数学公式验证码  
 接口防刷  
 
-### *有关Redis的内容  
+### * Redis相关内容  
 在CentOS7下安装Redis，安装完成之后，远程连接时会爆出如下异常:  
 ```text
 Failed connecting to host 192.168.xx.xxx:6379 
 ```  
 `解决办法：`[Failed connecting to host](http://note.youdao.com/noteshare?id=e227923eecab339849433cdd85bed0ab&sub=71D9867DA224496E98C7ED45AB5C7CEA) (附：[CentOS 7 对外开放Redis的端口](http://note.youdao.com/noteshare?id=325a578ad7a25d9b0f4253b1adbc4e00&sub=107E607FBAD3496C94388353DFDD9F31))
+
+### * Mybatis-Plus相关内容  
+[Mybatis-plus 官网](https://mybatis.plus/guide/#%E7%89%B9%E6%80%A7)  
+[MyBatis-Plus入门(慕课网视频教程)](https://www.imooc.com/learn/1130)  
+[Mybatis-Plus学习demo](https://github.com/szjzszjz/Mybatis-Plus-Study)  
 

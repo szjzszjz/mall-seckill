@@ -6,9 +6,12 @@ import com.szjz.mallseckill.entity.User;
 import com.szjz.mallseckill.integration.redis.RedisService;
 import com.szjz.mallseckill.integration.redis.keys.UserKey;
 import com.szjz.mallseckill.result.Result;
+import com.szjz.mallseckill.utils.RandomUtil;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.Date;
 
 /**
  * author:szjz
@@ -26,7 +29,16 @@ public class RedisTestController extends AbstractController {
     public Result set(@PathVariable Long id,
                       @PathVariable String name,
                       @PathVariable(required = false) Integer expire) {
-        User user = new User(id, name);
+        User user = new User(
+                "大朗",
+                "123",
+                "13899999999",
+                RandomUtil.randomAlphanumeric(10),
+                null,
+                new Date(),
+                null,
+                0
+        );
         Boolean res = redisService.set(UserKey.getById, id + "", user,expire);
         return success(res);
     }
