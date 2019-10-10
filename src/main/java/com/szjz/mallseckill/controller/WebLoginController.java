@@ -21,7 +21,7 @@ import java.io.IOException;
 @RestController
 public class WebLoginController extends AbstractPasswordLoginController<User> {
 
-    @RequestMapping(value = "/login")
+    @RequestMapping(value = "/login",method = RequestMethod.POST)
     @ApiOperation(value = "管理后台登录", notes = "登录失败 data.isEnabledVerifyCode == true; 登录超时 result.code==3;", response = Result.class)
     public Result adminLogin(@RequestParam(required = false) String loginName,
                              @RequestParam(required = false) String phone,
